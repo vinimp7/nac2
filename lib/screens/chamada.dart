@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nac2/screens/chamada_form.dart';
 
 class Chamada extends StatelessWidget {
   @override
@@ -28,6 +29,7 @@ class Chamada extends StatelessWidget {
           )),
 
       body: ListView(
+        padding: const EdgeInsets.all(20.0),
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(20.0),
@@ -35,22 +37,55 @@ class Chamada extends StatelessWidget {
                 child: ListTile(
                   title: Center(
                       child: Text(
-                        'Turmas',
+                        'Selecione uma Turma',
                         style: TextStyle(fontSize: 25.0),
                       )),
                 )),
           ),
-          Card(
-            child: ListTile(
-                title: Text(
-                  '3SIT',
-                  style: TextStyle(fontSize: 25),
-                ),
-                subtitle: Text(
-                  'Trabalho 1 descrição',
-                  style: TextStyle(fontSize: 15),
-                )),
+          GestureDetector(
+            onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChamadaForm(),),).then((newTrabalhos) => debugPrint(newTrabalhos.toString()),);},
+            child: Card(
+               child: ListTile(
+                  title: Text(
+                    '3SIT',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  subtitle: Text(
+                    'Sistemas da Informação',
+                    style: TextStyle(fontSize: 15),
+                  )),
 
+            ),
+          ),
+          GestureDetector(
+            onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChamadaForm(),),).then((newTrabalhos) => debugPrint(newTrabalhos.toString()),);},
+            child: Card(
+              child: ListTile(
+                  title: Text(
+                    '3SIS',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  subtitle: Text(
+                    'Sistemas da Informação',
+                    style: TextStyle(fontSize: 15),
+                  )),
+
+            ),
+          ),
+          GestureDetector(
+            onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChamadaForm(),),).then((newTrabalhos) => debugPrint(newTrabalhos.toString()),);},
+            child: Card(
+              child: ListTile(
+                  title: Text(
+                    '3SIR',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  subtitle: Text(
+                    'Sistemas da Informação',
+                    style: TextStyle(fontSize: 15),
+                  )),
+
+            ),
           )
         ],
       ),
