@@ -1,4 +1,3 @@
-import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 
 class Chamada extends StatelessWidget {
@@ -41,17 +40,20 @@ class Chamada extends StatelessWidget {
                       )),
                 )),
           ),
+          Card(
+            child: ListTile(
+                title: Text(
+                  '3SIT',
+                  style: TextStyle(fontSize: 25),
+                ),
+                subtitle: Text(
+                  'Trabalho 1 descrição',
+                  style: TextStyle(fontSize: 15),
+                )),
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: DropDownField(
-
-            ),
-          ),
+          )
         ],
       ),
     );
   }
 }
-
-

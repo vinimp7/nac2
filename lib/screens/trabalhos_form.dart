@@ -14,7 +14,7 @@ class _TrabalhosFormState extends State<TrabalhosForm> {
   final TextEditingController _temaController = TextEditingController();
   final TextEditingController _pesoController = TextEditingController();
   final TextEditingController _entregaController = TextEditingController();
-
+  final tipoSelected = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,14 @@ class _TrabalhosFormState extends State<TrabalhosForm> {
             child: DropDownField(
               labelText: 'Tipo',
               textStyle: TextStyle(fontSize: 25.0),
-        
+              controller: tipoSelected,
+              enabled: true,
+              items: tipoLista,
+              onValueChanged: (value){
+                setState(() {
+                  selectTipo = value;
+                });
+              },
             ),
           ),
 
@@ -163,11 +170,13 @@ class _TrabalhosFormState extends State<TrabalhosForm> {
   }
 }
 
+String selectTipo = "";
+
 List<String> tipoLista = [
-  "avaliação individual",
-  "avaliação conjunta",
-  "trabalho individual"
-  "trabalho conjunto"
+  "Avaliação Individual",
+  "Avaliação Conjunta",
+  "Trabalho Individual",
+  "Trabalho Conjunto"
 ];
 
 
